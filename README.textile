@@ -2,8 +2,13 @@ h2. What is this?
 
 Small task list app made during a presentation of Knockout.js at Community Day Copenhagen 2011. 
 
+h2. Sponsoreret af...
+
+![Spiir](http://dl.dropbox.com/u/328685/spiir/logo.png)
+
+Hved du mange penge du har brugt på kebab? Prøv Spiir - "Du er inviteret":https://mine.spiir.dk/opret?invitecode=communityday ;-)
+
 h2. Links
 
 * "Knockoutjs.com":http://knockoutjs.com
 * "Knock Me Out - inspiring blog on Knockout":http://www.knockmeout.net
-* "Kom i gang med Spiir":https://mine.spiir.dk/opret?invitecode=communityday
