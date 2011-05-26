@@ -4,11 +4,12 @@ Small task list app made during a presentation of Knockout.js at Community Day C
 
 h2. Sponsoreret af...
 
-![Spiir](http://dl.dropbox.com/u/328685/spiir/logo.png)
+<a href="http://www.spiir.dk"><img src="http://dl.dropbox.com/u/328685/spiir/logo.png" alt="Spiir"/></a>
 
-Hved du mange penge du har brugt på kebab? Prøv Spiir - "Du er inviteret":https://mine.spiir.dk/opret?invitecode=communityday ;-)
+Hved du mange penge du har brugt pÃ¥ kebab? PrÃ¸v Spiir - "Du er inviteret":https://mine.spiir.dk/opret?invitecode=communityday ;-)
 
 h2. Links
 
 * "Knockoutjs.com":http://knockoutjs.com
 * "Knock Me Out - inspiring blog on Knockout":http://www.knockmeout.net
+
