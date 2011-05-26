@@ -3,3 +3,4 @@ h2. Coming soon (that is, after the presentation ;)
 Links:
 * "Knockoutjs.com":http://knockoutjs.com
 * "Knock Me Out - inspiring blog on Knockout":http://www.knockmeout.net
+* "Kom i gang med Spiir":https://mine.spiir.dk/opret?invitecode=communityday
