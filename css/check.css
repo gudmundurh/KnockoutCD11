@@ -4,16 +4,13 @@
 @font-face {
     font-family: 'VAGRoundedStdBold';
     src: url('fonts/vagroundedstd-bold-webfont.eot');
-    src: url('fonts/vagroundedstd-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/vagroundedstd-bold-webfont.woff') format('woff'),
-         url('fonts/vagroundedstd-bold-webfont.ttf') format('truetype'),
-         url('fonts/vagroundedstd-bold-webfont.svg#VAGRoundedStdBold') format('svg');
+    src: url('fonts/vagroundedstd-bold-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/vagroundedstd-bold-webfont.woff') format('woff'), url('fonts/vagroundedstd-bold-webfont.ttf') format('truetype'), url('fonts/vagroundedstd-bold-webfont.svg#VAGRoundedStdBold') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 body, input, button {
-    font-size: 20px;
+    font-size: 22px;
     line-height: 1.5;
     font-family: Arial;
 }
@@ -23,7 +20,7 @@ h2, h3 {
 }
 
 h1 {
-    font-family: VAGRoundedStdBold, Arial   ;
+    font-family: VAGRoundedStdBold, Arial;
     text-shadow: #000 1px 1px 1px;
 }
 
@@ -32,7 +29,7 @@ input, button {
 }
 
 h3 {
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 0;
     font-weight: normal;
     text-transform: uppercase;
@@ -46,7 +43,7 @@ input[type=text] {
 /* Layout */
 
 .page {
-    max-width: 600px;
+    max-width: 700px;
     min-width: 300px;
     margin: 1em auto;
     border: 1px solid #ccc;
@@ -60,7 +57,7 @@ header, footer, section {
 
 header {
     background: #666;
-    background: url(http://multimedia.pol.dk/archive/00545/Iceland_Volcano_545676i.jpg);
+    background: url(askesky.jpg);
     color: #fff;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -84,6 +81,14 @@ footer p {
 footer button {
     font-size: 14px;
     padding: 3px 5px;
+}
+
+.startPage header {
+    height: 400px;
+}
+
+.startPage section {
+    background: url(spiir.png) no-repeat 95% 15px;
 }
 
 /* Form */
