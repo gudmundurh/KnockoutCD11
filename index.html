@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+    <title>Check!</title>
+    <link rel="stylesheet" type="text/css" href="css/check.css">
+    <meta charset="utf-8">
+    <script src="js/jquery-1.6.1.js"></script>
+    <script src="js/jquery.tmpl.js"></script>
+    <script src="js/knockout-1.2.1.debug.js"></script>
+</head>
+<body>
+
+<div class="page">
+    <header>
+        <h1>Check!</h1>
+        
+        <div class="chart">
+            <div class="bar"></div>
+            <span data-bind="text: percentCompleted"></span>
+        </div>
+
+    </header>
+    <section>
+        <form data-bind="submit: addNewTask">
+            <input type="text" data-bind="value: newTaskText" />
+            <button data-bind="click: addNewTask">Tilføj</button>
+        </form>
+
+        <h3>Tasks &ndash; <span data-bind="text: tasksRemaining"></span> tilbage</h3>
+        <ul class="tasks" data-bind="template: {
+                name: 'taskTemplate', 
+                foreach: tasks,
+                afterAdd: function(el) { $(el).hide().fadeIn() }
+            }"></ul>
+    </section>
+</div>
+
+<script id="taskTemplate" type="text/html">
+    <li data-bind="css: { done: done }">
+        {{if editing}}
+            <form data-bind="submit: save">
+                <input type="text" data-bind="value: text" />
+                <button type="submit">Gem</button>
+            </form>
+        {{else}}
+            <input type="checkbox" data-bind="checked: done">
+            <span data-bind="click: edit" class="text">${text}</span>
+
+            <a href="#" class="remove" data-bind="click: remove, visible: !done()"></a>
+        {{/if}}
+    </li>
+</script>
+
+<script>
+    function Task(text) {
+        this.text = ko.observable(text);
+        this.done = ko.observable(false);
+        this.editing = ko.observable(false);
+
+        this.edit = function () {
+            this.editing(true);
+        };
+
+        this.save = function () {
+            this.editing(false);
+        };
+
+        this.remove = function () {
+            viewModel.tasks.remove(this);
+        };
+    }
+
+    var viewModel = {
+        tasks: ko.observableArray(
+            [new Task('Lytte til PhoneGap'), new Task('Husk öl i aften')]
+        ),
+
+        addNewTask: function () {
+            this.tasks.push(new Task(this.newTaskText()));
+            this.newTaskText('');
+        },
+
+        newTaskText: ko.observable(),
+
+        save: function () {
+            localStorage.tasksJson = ko.toJSON(this);
+        },
+
+        load: function () {
+            var rawTasks = JSON.parse(localStorage.tasksJson || '{"tasks":[]}');
+            var array = $.map(rawTasks.tasks, function (rawTask) {
+                var t = new Task(rawTask.text);
+                t.done(rawTask.done);
+                return t;
+            });
+            this.tasks(array);
+        }
+    };
+
+    viewModel.tasksRemaining = ko.dependentObservable(function () {
+        return $.grep(this.tasks(), function (t) { return !t.done() }).length;
+    }, viewModel);
+
+    viewModel.percentCompleted = ko.dependentObservable(function () {
+        var numberOfTasks = this.tasks().length;
+        if (numberOfTasks == 0)
+            return "0%";
+
+        return Math.round(100 * (numberOfTasks - this.tasksRemaining()) / numberOfTasks) + '%';
+    }, viewModel);
+
+    viewModel.percentCompleted.subscribe(function (percent) {
+        $('.bar').animate({ width: percent }, 500);
+    });
+
+    // Added after the presentation: Persistence now works ;)
+    $(window).bind('unload', function () {
+        viewModel.save();
+    });
+
+    $(document).bind('ready', function () {
+        viewModel.load();
+        ko.applyBindings(viewModel);
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+@import "reset.css";
+@import "base.css";
+
+@font-face {
+    font-family: 'VAGRoundedStdBold';
+    src: url('fonts/vagroundedstd-bold-webfont.eot');
+    src: url('fonts/vagroundedstd-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/vagroundedstd-bold-webfont.woff') format('woff'),
+         url('fonts/vagroundedstd-bold-webfont.ttf') format('truetype'),
+         url('fonts/vagroundedstd-bold-webfont.svg#VAGRoundedStdBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, input, button {
+    font-size: 20px;
+    line-height: 1.5;
+    font-family: Arial;
+}
+
+h2, h3 {
+    text-shadow: #ccc 1px 1px 1px;
+}
+
+h1 {
+    font-family: VAGRoundedStdBold, Arial   ;
+    text-shadow: #000 1px 1px 1px;
+}
+
+input, button {
+    padding: 5px;
+}
+
+h3 {
+    font-size: 14px;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+input[type=text] {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Layout */
+
+.page {
+    max-width: 600px;
+    min-width: 300px;
+    margin: 1em auto;
+    border: 1px solid #ccc;
+    box-shadow: 2px 3px 5px #ddd;
+    border-radius: 10px;
+}
+
+header, footer, section {
+    padding: 1em;
+}
+
+header {
+    background: #666;
+    background: url(http://multimedia.pol.dk/archive/00545/Iceland_Volcano_545676i.jpg);
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    line-height: 1;
+}
+
+section {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer button {
+    font-size: 14px;
+    padding: 3px 5px;
+}
+
+/* Form */
+
+form input[type=text] {
+    width: 82%;
+}
+
+form button {
+    width: 14%;
+}
+
+form h3, form p {
+    margin: 0;
+}
+
+/* Task list */
+
+.tasks {
+    margin: 5px 0 0 0;
+}
+
+.tasks li {
+    list-style: none;
+    min-height: 35px;
+}
+
+input[type=checkbox] {
+    width: 20px;
+    height: 20px;
+    vertical-align: -3px;
+}
+
+.tasks a.text {
+    color: #000;
+    text-decoration: none;
+}
+
+.tasks a.text:hover {
+    text-decoration: underline;
+}
+
+.done .text {
+    text-decoration: line-through;
+    color: #ccc;
+}
+
+.remove {
+    width: 15px;
+    height: 17px;
+    display: inline-block;
+    background: url(pacman.png);
+    text-indent: -9999px;
+    opacity: .3;
+    vertical-align: middle;
+}
+
+.remove:hover {
+    opacity: 1;
+}
+
+/* Chart */
+
+.chart {
+    background: rgba(255,255,255,0.3);
+    height: 30px;
+    border: 1px solid #ccc;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    border-radius: 5px;
+    width: 50%;
+}
+
+.chart .bar {
+    position: absolute;
+    height: 30px;
+    background: rgba(0,255,0,0.6);
+}
+
+.chart span {
+    position: absolute;
+    color: #000;
+    text-shadow: #ccc 1px 1px 1px;
+    left: 10px;
+    top: 4px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+    .page {
+        border: none;
+        border-radius: 0;
+        margin: 0;
+    }
+
+    header, footer, section {
+        padding: 1em .5em;
+    }
+
+    .chart {
+        right: .5em;
+    }
+
+    header {
+        border-radius: 0;
+    }
+
+    form input[type=text] {
+        width: 77%;
+    }
+
+    form button {
+        width: 17%;
+    }
+}
