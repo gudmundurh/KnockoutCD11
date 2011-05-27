@@ -13,3 +13,6 @@ h2. Links
 * "Knockoutjs.com":http://knockoutjs.com
 * "Knock Me Out - inspiring blog on Knockout":http://www.knockmeout.net
 
+h2. Contact
+
+Feel free to contact me: "@gudmundurh":http://twitter.com/gudmundurh or "e-mail":gudmundur.hreidarsson@gmail.com
